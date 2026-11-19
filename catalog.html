@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Каталог проката: консоли PlayStation, Xbox, Nintendo и настольные игры с фильтрами и сортировкой.">
+  <meta name="color-scheme" content="light dark">
+  <title>Каталог — PlayRent</title>
+  <script>try{var t=localStorage.getItem('rent-theme');if(!t){t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}document.documentElement.dataset.theme=t}catch(e){}</script>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Перейти к содержимому</a>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="site-header__logo" href="index.html"><svg class="site-header__logo-icon" viewBox="0 0 32 32" width="32" height="32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="currentColor"/><path d="M9 13h14a3 3 0 0 1 3 3.3l-.5 4.2a2.6 2.6 0 0 1-4.6 1.4L19.6 20h-7.2l-1.3 1.9a2.6 2.6 0 0 1-4.6-1.4L6 16.3A3 3 0 0 1 9 13z" fill="#fff"/><circle cx="11.5" cy="16.5" r="1.3" fill="currentColor"/><circle cx="20.5" cy="16.5" r="1.3" fill="currentColor"/></svg><span>PlayRent</span></a>
+      <nav class="site-nav" id="site-nav" aria-label="Основная навигация">
+        <ul class="site-nav__list">
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html">Главная</a></li>
+          <li class="site-nav__item"><a class="site-nav__link site-nav__link--active" href="catalog.html" aria-current="page">Каталог</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="booking.html">Бронирование</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="contacts.html">О нас и контакты</a></li>
+        </ul>
+      </nav>
+      <div class="site-header__tools">
+        <button class="theme-toggle" type="button" aria-label="Переключить тему" title="Тёмная / светлая тема">
+          <span class="theme-toggle__icon" aria-hidden="true"></span>
+        </button>
+        <a class="button button--primary button--sm site-header__cta" href="booking.html">Забронировать</a>
+        <button class="site-header__burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="site-nav">
+          <span class="site-header__burger-line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="page" id="main">
+    <nav class="breadcrumbs" aria-label="Хлебные крошки">
+      <a class="breadcrumbs__link" href="index.html">Главная</a>
+      <span class="breadcrumbs__current" aria-current="page">Каталог</span>
+    </nav>
+    <section class="section">
+      <h1 class="section__title section__title--xl">Каталог проката</h1>
+      <p class="section__lead">Выберите платформу, количество игроков и бюджет. Цены указаны за сутки — на неделю действует выгодный тариф.</p>
+    </section>
+
+    <div class="catalog-layout">
+      <aside class="catalog-filters" aria-label="Фильтры каталога">
+        <h2 class="catalog-filters__title">Фильтры</h2>
+        <form class="filters" id="filters-form" action="#" method="get">
+          <fieldset class="filters__group">
+            <legend class="filters__legend">Платформа</legend>
+            <label class="filters__option"><input type="checkbox" name="platform" value="ps"> PlayStation</label>
+            <label class="filters__option"><input type="checkbox" name="platform" value="xbox"> Xbox</label>
+            <label class="filters__option"><input type="checkbox" name="platform" value="nintendo"> Nintendo</label>
+            <label class="filters__option"><input type="checkbox" name="platform" value="board"> Настольные игры</label>
+          </fieldset>
+          <fieldset class="filters__group">
+            <legend class="filters__legend">Количество игроков</legend>
+            <label class="filters__label" for="filter-players">Сколько вас будет</label>
+            <select class="filters__input" id="filter-players" name="players"><option value="">Любое</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="8">8</option><option value="10">10</option></select>
+          </fieldset>
+          <fieldset class="filters__group">
+            <legend class="filters__legend">Цена за сутки, ₽</legend>
+            <div class="filters__range">
+              <div><label class="filters__label" for="price-from">От</label><input class="filters__input" id="price-from" name="price-from" type="number" min="0" step="50" placeholder="0"></div>
+              <div><label class="filters__label" for="price-to">До</label><input class="filters__input" id="price-to" name="price-to" type="number" min="0" step="50" placeholder="2000"></div>
+            </div>
+          </fieldset>
+          <button class="button button--secondary" type="reset">Сбросить фильтры</button>
+        </form>
+      </aside>
+
+      <section class="catalog-products" aria-labelledby="catalog-list-title">
+        <div class="catalog-toolbar">
+          <h2 class="catalog-toolbar__title" id="catalog-list-title">Список позиций</h2>
+          <p class="catalog-toolbar__count" id="catalog-count" aria-live="polite">Найдено: 12</p>
+          <div class="catalog-toolbar__sort">
+            <label class="catalog-toolbar__label" for="catalog-sort">Сортировка</label>
+            <select class="catalog-toolbar__select" id="catalog-sort" form="filters-form">
+              <option value="default">По умолчанию</option>
+              <option value="price-asc">Сначала дешевле</option>
+              <option value="price-desc">Сначала дороже</option>
+              <option value="name">По названию</option>
+            </select>
+          </div>
+        </div>
+        <div class="products-grid products-grid--catalog" id="catalog-grid">
+    <article class="product-card" data-id="1" data-platform="ps" data-pmin="1" data-pmax="4" data-price="1800" data-name="PlayStation 5">
+      <span class="product-card__badge product-card__badge--hit">Хит</span>
+      <a class="product-card__media" href="product.html?id=1" tabindex="-1" aria-hidden="true">
+        <img class="product-card__image" src="images/product-1-1.svg" alt="" width="400" height="300" loading="lazy">
+      </a>
+      <div class="product-card__meta"><span class="chip chip--ps">PlayStation</span><span class="product-card__players">Игроков: 1–4</span></div>
+      <h3 class="product-card__title"><a class="product-card__link" href="product.html?id=1">PlayStation 5</a></h3>
+      <p class="product-card__description">Флагманская консоль с SSD и поддержкой 4K. Два геймпада в комплекте.</p>
+      <p class="product-card__price"><span class="product-card__price-current">1 800 ₽</span><span class="product-card__price-unit">/ сутки</span></p>
+      <div class="product-card__actions">
+        <a class="button button--secondary" href="product.html?id=1">Подробнее</a>
+        <a class="button button--primary" href="booking.html?id=1">Забронировать</a>
+      </div>
+    </article>
+    <article class="product-card" data-id="2" data-platform="ps" data-pmin="1" data-pmax="4" data-price="1200" data-name="PlayStation 4 Pro">
+      <a class="product-card__media" href="product.html?id=2" tabindex="-1" aria-hidden="true">
+        <img class="product-card__image" src="images/product-2-1.svg" alt="" width="400" height="300" loading="lazy">
+      </a>
+      <div class="product-card__meta"><span class="chip chip--ps">PlayStation</span><span class="product-card__players">Игроков: 1–4</span></div>
+      <h3 class="product-card__title"><a class="product-card__link" href="product.html?id=2">PlayStation 4 Pro</a></h3>
+      <p class="product-card__description">Проверенная классика с огромной библиотекой игр для компании.</p>
+      <p class="product-card__price"><span class="product-card__price-current">1 200 ₽</span><span class="product-card__price-unit">/ сутки</span></p>
+      <div class="product-card__actions">
+        <a class="button button--secondary" href="product.html?id=2">Подробнее</a>
+        <a class="button button--primary" href="booking.html?id=2">Забронировать</a>
+      </div>
+    </article>
+    <article class="product-card" data-id="3" data-platform="xbox" data-pmin="1" data-pmax="4" data-price="1700" data-name="Xbox Series X">
+      <span class="product-card__badge product-card__badge--hit">Хит</span>
+      <a class="product-card__media" href="product.html?id=3" tabindex="-1" aria-hidden="true">
+        <img class="product-card__image" src="images/product-3-1.svg" alt="" width="400" height="300" loading="lazy">
+      </a>
+      <div class="product-card__meta"><span class="chip chip--xbox">Xbox</span><span class="product-card__players">Игроков: 1–4</span></div>
+      <h3 class="product-card__title"><a class="product-card__link" href="product.html?id=3">Xbox Series X</a></h3>
+      <p class="product-card__description">Мощная консоль с тихим охлаждением и подпиской Game Pass на время аренды.</p>
+      <p class="product-card__price"><span class="product-card__price-current">1 700 ₽</span><span class="product-card__price-unit">/ сутки</span></p>
+      <div class="product-card__actions">
+        <a class="button button--secondary" href="product.html?id=3">Подробнее</a>
+        <a class="button button--primary" href="booking.html?id=3">Забронировать</a>
+      </div>
+    </article>
+    <article class="product-card" data-id="4" data-platform="xbox" data-pmin="1" data-pmax="4" data-price="1100" data-name="Xbox Series S">
+      <span class="product-card__badge product-card__badge--sale">Акция</span>
+      <a class="product-card__media" href="product.html?id=4" tabindex="-1" aria-hidden="true">
+        <img class="product-card__image" src="images/product-4-1.svg" alt="" width="400" height="300" loading="lazy">
+      </a>
+      <div class="product-card__meta"><span class="chip chip--xbox">Xbox</span><span class="product-card__players">Игроков: 1–4</span></div>
+      <h3 class="product-card__title"><a class="product-card__link" href="product.html?id=4">Xbox Series S</a></h3>
+      <p class="product-card__description">Компактная белая консоль — доступный вход в мир Game Pass.</p>
+      <p class="product-card__price"><span class="product-card__price-old">1 400 ₽</span><span class="product-card__price-current">1 100 ₽</span><span class="product-card__price-unit">/ сутки</span></p>
+      <div class="product-card__actions">
+        <a class="button button--secondary" href="product.html?id=4">Подробнее</a>
+        <a class="button button--primary" href="booking.html?id=4">Забронировать</a>
+      </div>
+    </article>
+    <article class="product-card" data-id="5" data-platform="nintendo" data-pmin="1" data-pmax="4" data-price="1300" data-name="Nintendo Switch OLED">
+      <span class="product-card__badge product-card__badge--new">Новинка</span>
+      <a class="product-card__media" href="product.html?id=5" tabindex="-1" aria-hidden="true">
+        <img class="product-card__image" src="images/product-5-1.svg" alt="" width="400" height="300" loading="lazy">
+      </a>
+      <div class="product-card__meta"><span class="chip chip--nintendo">Nintendo</span><span class="product-card__players">Игроков: 1–4</span></div>
+      <h3 class="product-card__title"><a class="product-card__link" href="product.html?id=5">Nintendo Switch OLED</a></h3>
+      <p class="product-card__description">Гибридная консоль с яркой OLED-вставкой: играйте дома и в дороге.</p>
+      <p class="product-card__price"><span class="product-card__price-current">1 300 ₽</span><span class="product-card__price-unit">/ сутки</span></p>
+      <div class="product-card__actions">
+        <a class="button button--secondary" href="product.html?id=5">Подробнее</a>
+        <a class="button button--primary" href="booking.html?id=5">Забронировать</a>
+      </div>
+    </article>
+    <article class="product-card" data-id="6" data-platform="nintendo" data-pmin="1" data-pmax="1" data-price="800" data-name="Nintendo Switch Lite">
+      <a class="product-card__media" href="product.html?id=6" tabindex="-1" aria-hidden="true">
+        <img class="product-card__image" src="images/product-6-1.svg" alt="" width="400" height="300" loading="lazy">
+      </a>
+      <div class="product-card__meta"><span class="chip chip--nintendo">Nintendo</span><span class="product-card__players">Игроков: 1</span></div>
+      <h3 class="product-card__title"><a class="product-card__link" href="product.html?id=6">Nintendo Switch Lite</a></h3>
+      <p class="product-card__description">Лёгкая портативная консоль для игры в поездках и на отдыхе.</p>
+      <p class="product-card__price"><span class="product-card__price-current">800 ₽</span><span class="product-card__price-unit">/ сутки</span></p>
+      <div class="product-card__actions">
+        <a class="button button--secondary" href="product.html?id=6">Подробнее</a>
+        <a class="button button--primary" href="booking.html?id=6">Забронировать</a>
+      </div>
+    </article>
+    <article class="product-card" data-id="7" data-platform="board" data-pmin="2" data-pmax="5" data-price="350" data-name="Каркассон">
+      <span class="product-card__badge product-card__badge--hit">Хит</span>
+      <a class="product-card__media" href="product.html?id=7" tabindex="-1" aria-hidden="true">
+        <img class="product-card__image" src="images/product-7-1.svg" alt="" width="400" height="300" loading="lazy">
+      </a>
+      <div class="product-card__meta"><span class="chip chip--board">Настольные игры</span><span class="product-card__players">Игроков: 2–5</span></div>
+      <h3 class="product-card__title"><a class="product-card__link" href="product.html?id=7">Каркассон</a></h3>
+      <p class="product-card__description">Стратегия про строительство средневекового города. Партия — 30–40 минут.</p>
+      <p class="product-card__price"><span class="product-card__price-current">350 ₽</span><span class="product-card__price-unit">/ сутки</span></p>
+      <div class="product-card__actions">
+        <a class="button button--secondary" href="product.html?id=7">Подробнее</a>
+        <a class="button button--primary" href="booking.html?id=7">Забронировать</a>
+      </div>
+    </article>
+    <article class="product-card" data-id="8" data-platform="board" data-pmin="3" data-pmax="8" data-price="400" data-name="Диксит">
+      <span class="product-card__badge product-card__badge--new">Новинка</span>
+      <a class="product-card__media" href="product.html?id=8" tabindex="-1" aria-hidden="true">
+        <img class="product-card__image" src="images/product-8-1.svg" alt="" width="400" height="300" loading="lazy">
+      </a>
+      <div class="product-card__meta"><span class="chip chip--board">Настольные игры</span><span class="product-card__players">Игроков: 3–8</span></div>
+      <h3 class="product-card__title"><a class="product-card__link" href="product.html?id=8">Диксит</a></h3>
+      <p class="product-card__description">Ассоциативная игра с красивыми иллюстрациями для большой компании.</p>
+      <p class="product-card__price"><span class="product-card__price-current">400 ₽</span><span class="product-card__price-unit">/ сутки</span></p>
+      <div class="product-card__actions">
+        <a class="button button--secondary" href="product.html?id=8">Подробнее</a>
+        <a class="button button--primary" href="booking.html?id=8">Забронировать</a>
+      </div>
+    </article>
+    <article class="product-card" data-id="9" data-platform="board" data-pmin="2" data-pmax="5" data-price="250" data-name="Взрывные котята">
+      <a class="product-card__media" href="product.html?id=9" tabindex="-1" aria-hidden="true">
+        <img class="product-card__image" src="images/product-9-1.svg" alt="" width="400" height="300" loading="lazy">
+      </a>
+      <div class="product-card__meta"><span class="chip chip--board">Настольные игры</span><span class="product-card__players">Игроков: 2–5</span></div>
+      <h3 class="product-card__title"><a class="product-card__link" href="product.html?id=9">Взрывные котята</a></h3>
+      <p class="product-card__description">Быстрая карточная игра на 15 минут: не вытяните взрывного котёнка!</p>
+      <p class="product-card__price"><span class="product-card__price-current">250 ₽</span><span class="product-card__price-unit">/ сутки</span></p>
+      <div class="product-card__actions">
+        <a class="button button--secondary" href="product.html?id=9">Подробнее</a>
+        <a class="button button--primary" href="booking.html?id=9">Забронировать</a>
+      </div>
+    </article>
+    <article class="product-card" data-id="10" data-platform="board" data-pmin="3" data-pmax="4" data-price="450" data-name="Колонизаторы">
+      <span class="product-card__badge product-card__badge--sale">Акция</span>
+      <a class="product-card__media" href="product.html?id=10" tabindex="-1" aria-hidden="true">
+        <img class="product-card__image" src="images/product-10-1.svg" alt="" width="400" height="300" loading="lazy">
+      </a>
+      <div class="product-card__meta"><span class="chip chip--board">Настольные игры</span><span class="product-card__players">Игроков: 3–4</span></div>
+      <h3 class="product-card__title"><a class="product-card__link" href="product.html?id=10">Колонизаторы</a></h3>
+      <p class="product-card__description">Классика экономических игр: добывайте ресурсы и стройте поселения.</p>
+      <p class="product-card__price"><span class="product-card__price-old">550 ₽</span><span class="product-card__price-current">450 ₽</span><span class="product-card__price-unit">/ сутки</span></p>
+      <div class="product-card__actions">
+        <a class="button button--secondary" href="product.html?id=10">Подробнее</a>
+        <a class="button button--primary" href="booking.html?id=10">Забронировать</a>
+      </div>
+    </article>
+    <article class="product-card" data-id="11" data-platform="board" data-pmin="6" data-pmax="12" data-price="300" data-name="Мафия: большая компания">
+      <span class="product-card__badge product-card__badge--new">Новинка</span>
+      <a class="product-card__media" href="product.html?id=11" tabindex="-1" aria-hidden="true">
+        <img class="product-card__image" src="images/product-11-1.svg" alt="" width="400" height="300" loading="lazy">
+      </a>
+      <div class="product-card__meta"><span class="chip chip--board">Настольные игры</span><span class="product-card__players">Игроков: 6–12</span></div>
+      <h3 class="product-card__title"><a class="product-card__link" href="product.html?id=11">Мафия: большая компания</a></h3>
+      <p class="product-card__description">Психологическая игра для больших вечеринок, до 12 участников.</p>
+      <p class="product-card__price"><span class="product-card__price-current">300 ₽</span><span class="product-card__price-unit">/ сутки</span></p>
+      <div class="product-card__actions">
+        <a class="button button--secondary" href="product.html?id=11">Подробнее</a>
+        <a class="button button--primary" href="booking.html?id=11">Забронировать</a>
+      </div>
+    </article>
+    <article class="product-card" data-id="12" data-platform="board" data-pmin="2" data-pmax="8" data-price="300" data-name="Кодовые имена">
+      <a class="product-card__media" href="product.html?id=12" tabindex="-1" aria-hidden="true">
+        <img class="product-card__image" src="images/product-12-1.svg" alt="" width="400" height="300" loading="lazy">
+      </a>
+      <div class="product-card__meta"><span class="chip chip--board">Настольные игры</span><span class="product-card__players">Игроков: 2–8</span></div>
+      <h3 class="product-card__title"><a class="product-card__link" href="product.html?id=12">Кодовые имена</a></h3>
+      <p class="product-card__description">Командная игра на ассоциации: найдите своих агентов по подсказкам капитана.</p>
+      <p class="product-card__price"><span class="product-card__price-current">300 ₽</span><span class="product-card__price-unit">/ сутки</span></p>
+      <div class="product-card__actions">
+        <a class="button button--secondary" href="product.html?id=12">Подробнее</a>
+        <a class="button button--primary" href="booking.html?id=12">Забронировать</a>
+      </div>
+    </article>
+        </div>
+        <p class="catalog-empty" id="catalog-empty" hidden>По выбранным условиям ничего не найдено. Измените фильтры или сбросьте их.</p>
+        <nav class="pagination" id="pagination" aria-label="Страницы каталога" hidden></nav>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <div class="site-footer__col site-footer__col--brand">
+        <p class="site-footer__logo"><svg class="site-header__logo-icon" viewBox="0 0 32 32" width="32" height="32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="currentColor"/><path d="M9 13h14a3 3 0 0 1 3 3.3l-.5 4.2a2.6 2.6 0 0 1-4.6 1.4L19.6 20h-7.2l-1.3 1.9a2.6 2.6 0 0 1-4.6-1.4L6 16.3A3 3 0 0 1 9 13z" fill="#fff"/><circle cx="11.5" cy="16.5" r="1.3" fill="currentColor"/><circle cx="20.5" cy="16.5" r="1.3" fill="currentColor"/></svg><span>PlayRent</span></p>
+        <p>Прокат игровых консолей и настольных игр с доставкой за час и без залога.</p>
+      </div>
+      <div class="site-footer__col">
+        <p class="site-footer__title">Разделы</p>
+        <ul class="site-footer__list">
+          <li><a class="site-footer__link" href="catalog.html">Каталог</a></li>
+          <li><a class="site-footer__link" href="booking.html">Бронирование</a></li>
+          <li><a class="site-footer__link" href="contacts.html#zone">Зона доставки</a></li>
+          <li><a class="site-footer__link" href="contacts.html#faq">Вопросы и ответы</a></li>
+        </ul>
+      </div>
+      <div class="site-footer__col">
+        <p class="site-footer__title">Контакты</p>
+        <ul class="site-footer__list">
+          <li><a class="site-footer__link" href="tel:+74950000000">+7 (495) 000-00-00</a></li>
+          <li><a class="site-footer__link" href="mailto:hello@playrent.example">hello@playrent.example</a></li>
+          <li>Ежедневно, 10:00–22:00</li>
+        </ul>
+        <ul class="socials" aria-label="Мы в мессенджерах">
+          <li class="socials__item">
+            <a class="socials__link socials__link--telegram" href="https://t.me/playrent_example" target="_blank" rel="noopener noreferrer" aria-label="Telegram" title="Telegram">
+              <svg class="socials__icon" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M21.5 3.6 2.9 10.8c-1.3.5-1.2 1.2-.2 1.5l4.8 1.5 1.8 5.6c.2.6.4.8.8.8.4 0 .6-.2.9-.5l2.3-2.3 4.7 3.5c.9.5 1.5.2 1.7-.8L22.9 5c.3-1.2-.5-1.8-1.4-1.4zM8.6 13.3l9.3-5.9c.4-.3.8-.1.5.2l-7.6 7-.3 3.2-1.9-4.5z"/></svg>
+            </a>
+          </li>
+          <li class="socials__item">
+            <a class="socials__link socials__link--max" href="https://max.ru/playrent_example" target="_blank" rel="noopener noreferrer" aria-label="MAX" title="MAX">
+              <svg class="socials__icon" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M12 2C6.5 2 2 6.2 2 11.4c0 2.5 1 4.7 2.7 6.4-.1 1.3-.6 2.6-1.4 3.6-.2.3 0 .7.4.7 2 0 3.6-.8 4.7-1.7 1.1.4 2.3.6 3.6.6 5.5 0 10-4.2 10-9.4S17.5 2 12 2zm-4.3 12.2V8.9c0-.3.2-.5.5-.5h.9c.2 0 .4.1.5.3l2.4 3.3 2.4-3.3c.1-.2.3-.3.5-.3h.9c.3 0 .5.2.5.5v5.3c0 .3-.2.5-.5.5h-.8c-.3 0-.5-.2-.5-.5v-3l-1.9 2.6c-.2.3-.7.3-.9 0l-1.9-2.6v3c0 .3-.2.5-.5.5h-.8c-.3 0-.5-.2-.5-.5z"/></svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <p class="site-footer__copy">&copy; 2026 PlayRent. Учебный проект. Автор: Ермаков Арсений.</p>
+  </footer>
+</body>
+</html>

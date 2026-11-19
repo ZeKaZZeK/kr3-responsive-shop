@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="О сервисе PlayRent: зона доставки, телефон, e-mail, карта, форма обратной связи и ответы на частые вопросы.">
+  <meta name="color-scheme" content="light dark">
+  <title>О нас и контакты — PlayRent</title>
+  <script>try{var t=localStorage.getItem('rent-theme');if(!t){t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}document.documentElement.dataset.theme=t}catch(e){}</script>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Перейти к содержимому</a>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="site-header__logo" href="index.html"><svg class="site-header__logo-icon" viewBox="0 0 32 32" width="32" height="32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="currentColor"/><path d="M9 13h14a3 3 0 0 1 3 3.3l-.5 4.2a2.6 2.6 0 0 1-4.6 1.4L19.6 20h-7.2l-1.3 1.9a2.6 2.6 0 0 1-4.6-1.4L6 16.3A3 3 0 0 1 9 13z" fill="#fff"/><circle cx="11.5" cy="16.5" r="1.3" fill="currentColor"/><circle cx="20.5" cy="16.5" r="1.3" fill="currentColor"/></svg><span>PlayRent</span></a>
+      <nav class="site-nav" id="site-nav" aria-label="Основная навигация">
+        <ul class="site-nav__list">
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html">Главная</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="catalog.html">Каталог</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="booking.html">Бронирование</a></li>
+          <li class="site-nav__item"><a class="site-nav__link site-nav__link--active" href="contacts.html" aria-current="page">О нас и контакты</a></li>
+        </ul>
+      </nav>
+      <div class="site-header__tools">
+        <button class="theme-toggle" type="button" aria-label="Переключить тему" title="Тёмная / светлая тема">
+          <span class="theme-toggle__icon" aria-hidden="true"></span>
+        </button>
+        <a class="button button--primary button--sm site-header__cta" href="booking.html">Забронировать</a>
+        <button class="site-header__burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="site-nav">
+          <span class="site-header__burger-line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="page" id="main">
+    <nav class="breadcrumbs" aria-label="Хлебные крошки">
+      <a class="breadcrumbs__link" href="index.html">Главная</a>
+      <span class="breadcrumbs__current" aria-current="page">О нас и контакты</span>
+    </nav>
+
+    <section class="section" id="about" aria-labelledby="about-title">
+      <h1 class="section__title section__title--xl" id="about-title">О нас и контакты</h1>
+      <div class="about">
+        <div class="about__text prose">
+          <p>PlayRent — сервис проката игровых консолей и настольных игр. Мы помогаем устроить игровой вечер без покупки дорогого оборудования: привозим консоль или игру, подключаем и забираем после аренды.</p>
+          <p>Всё оборудование проходит проверку и чистку перед каждой выдачей. Мы не берём залог, а условия аренды прозрачны: цена за сутки и за неделю указана в карточке каждой позиции.</p>
+        </div>
+        <ul class="stats">
+        <li class="stats__item"><p class="stats__value">5 лет</p><p class="stats__label">на рынке проката</p></li>
+        <li class="stats__item"><p class="stats__value">12 000+</p><p class="stats__label">выдач за всё время</p></li>
+        <li class="stats__item"><p class="stats__value">98%</p><p class="stats__label">довольных клиентов</p></li>
+        <li class="stats__item"><p class="stats__value">60 мин</p><p class="stats__label">средняя доставка</p></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="zone" aria-labelledby="zone-title">
+      <h2 class="section__title" id="zone-title">Зона доставки</h2>
+      <div class="zone">
+        <figure class="zone-map">
+        <svg class="zone-map__svg" viewBox="0 0 400 300" role="img" aria-label="Схема зон доставки: центр, в пределах МКАД и до 10 км за МКАД">
+          <rect width="400" height="300" class="zone-map__bg"/>
+          <g class="zone-map__roads" fill="none" stroke-width="6" stroke-linecap="round">
+            <path d="M0 150 H400"/><path d="M200 0 V300"/><path d="M40 40 L360 260"/><path d="M40 260 L360 40"/>
+          </g>
+          <ellipse cx="200" cy="150" rx="185" ry="135" class="zone-map__zone zone-map__zone--3"/>
+          <ellipse cx="200" cy="150" rx="125" ry="92" class="zone-map__zone zone-map__zone--2"/>
+          <ellipse cx="200" cy="150" rx="62" ry="46" class="zone-map__zone zone-map__zone--1"/>
+          <circle cx="200" cy="150" r="9" class="zone-map__pin"/>
+          <text x="200" y="182" text-anchor="middle" class="zone-map__label">Центр</text>
+          <text x="200" y="97" text-anchor="middle" class="zone-map__label">В пределах МКАД</text>
+          <text x="200" y="38" text-anchor="middle" class="zone-map__label">До 10 км за МКАД</text>
+        </svg>
+          <figcaption class="zone-map__caption">Схема условная. Точный адрес проверим при бронировании.</figcaption>
+        </figure>
+        <table class="data-table">
+          <caption class="data-table__caption">Сроки и стоимость доставки</caption>
+          <thead><tr class="data-table__row"><th class="data-table__th data-table__th--head" scope="col">Зона</th><th class="data-table__th data-table__th--head" scope="col">Срок</th><th class="data-table__th data-table__th--head" scope="col">Стоимость</th></tr></thead>
+          <tbody>
+          <tr class="data-table__row"><th class="data-table__th" scope="row">Центр</th><td class="data-table__td">до 30 минут</td><td class="data-table__td">бесплатно</td></tr>
+          <tr class="data-table__row"><th class="data-table__th" scope="row">В пределах МКАД</th><td class="data-table__td">30–60 минут</td><td class="data-table__td">бесплатно от 1500 ₽</td></tr>
+          <tr class="data-table__row"><th class="data-table__th" scope="row">До 10 км за МКАД</th><td class="data-table__td">1–2 часа</td><td class="data-table__td">300 ₽</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section" id="contacts" aria-labelledby="contacts-title">
+      <h2 class="section__title" id="contacts-title">Контакты</h2>
+      <ul class="contact-cards">
+        <li class="contact-card"><p class="contact-card__label">Телефон</p><p class="contact-card__value"><a href="tel:+74950000000">+7 (495) 000-00-00</a></p></li>
+        <li class="contact-card"><p class="contact-card__label">E-mail</p><p class="contact-card__value"><a href="mailto:hello@playrent.example">hello@playrent.example</a></p></li>
+        <li class="contact-card"><p class="contact-card__label">Пункт выдачи</p><p class="contact-card__value">Москва, ул. Игровая, 1</p></li>
+        <li class="contact-card"><p class="contact-card__label">Часы работы</p><p class="contact-card__value">Ежедневно, 10:00–22:00</p></li>
+      </ul>
+    </section>
+
+    <section class="section" id="feedback" aria-labelledby="feedback-title">
+      <h2 class="section__title" id="feedback-title">Обратная связь</h2>
+      <div class="feedback">
+        <form class="feedback__form" id="feedback-form" action="#" method="post" novalidate data-validate>
+          <div class="booking-form__row">
+        <div class="field">
+          <label class="field__label" for="fb-name">Имя</label>
+          <input class="field__control" id="fb-name" name="name" type="text" minlength="2" autocomplete="given-name" required>
+          <p class="field__error" id="fb-name-error" role="alert" hidden></p>
+        </div>
+        <div class="field">
+          <label class="field__label" for="fb-email">E-mail</label>
+          <input class="field__control" id="fb-email" name="email" type="email" autocomplete="email" placeholder="example@mail.ru" required>
+          <p class="field__error" id="fb-email-error" role="alert" hidden></p>
+        </div>
+          </div>
+        <div class="field">
+          <label class="field__label" for="fb-topic">Тема</label>
+          <select class="field__control" id="fb-topic" name="topic" required><option value="">Выберите тему</option><option>Вопрос по аренде</option><option>Продление</option><option>Сотрудничество</option><option>Другое</option></select>
+          <p class="field__error" id="fb-topic-error" role="alert" hidden></p>
+        </div>
+        <div class="field">
+          <label class="field__label" for="fb-message">Сообщение</label>
+          <textarea class="field__control" id="fb-message" name="message" rows="5" minlength="10" maxlength="500" required data-counter="fb-counter"></textarea>
+          <small class="field__hint" id="fb-message-hint"><span id="fb-counter">0 / 500</span></small>
+          <p class="field__error" id="fb-message-error" role="alert" hidden></p>
+        </div>
+          <div class="field field--checkbox">
+            <label class="field__check"><input class="field__checkbox" id="fb-agree" name="agreement" type="checkbox" required><span>Согласен на обработку персональных данных</span></label>
+            <p class="field__error" id="fb-agree-error" role="alert" hidden></p>
+          </div>
+          <button class="button button--primary" type="submit">Отправить сообщение</button>
+        </form>
+        <div class="feedback__success" data-form-success tabindex="-1" hidden>
+          <p class="feedback__success-title">Сообщение отправлено</p>
+          <p>Спасибо! Ответим в течение рабочего дня.</p>
+          <button class="button button--secondary" type="button" data-form-reset>Написать ещё</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq" aria-labelledby="faq-title">
+      <h2 class="section__title" id="faq-title">Частые вопросы</h2>
+      <div class="accordion">
+      <details class="accordion__item" name="faq">
+        <summary class="accordion__question">Нужен ли залог?</summary>
+        <div class="accordion__answer"><p>Нет. Вместо залога мы берём предоплату 30% от стоимости аренды и проверяем паспорт при выдаче. Остальную сумму вы платите курьеру или онлайн.</p></div>
+      </details>
+      <details class="accordion__item" name="faq">
+        <summary class="accordion__question">Как быстро привезёте?</summary>
+        <div class="accordion__answer"><p>В пределах зоны доставки привозим за час после подтверждения брони. Точное время вы выбираете при оформлении.</p></div>
+      </details>
+      <details class="accordion__item" name="faq">
+        <summary class="accordion__question">Что делать, если оборудование сломалось?</summary>
+        <div class="accordion__answer"><p>Позвоните нам — заменим консоль или игру бесплатно в течение дня. Поломки по вине производителя не оплачиваются.</p></div>
+      </details>
+      <details class="accordion__item" name="faq">
+        <summary class="accordion__question">Можно ли продлить аренду?</summary>
+        <div class="accordion__answer"><p>Да, напишите или позвоните не позднее чем за 3 часа до окончания. Продление возможно, если позицию не забронировали другие.</p></div>
+      </details>
+      <details class="accordion__item" name="faq">
+        <summary class="accordion__question">Что входит в аренду консоли?</summary>
+        <div class="accordion__answer"><p>Консоль, два геймпада, все кабели и набор игр из карточки товара. Доступ к подписке (Game Pass и аналогам) подключаем на время аренды.</p></div>
+      </details>
+      <details class="accordion__item" name="faq">
+        <summary class="accordion__question">Как вернуть оборудование?</summary>
+        <div class="accordion__answer"><p>Курьер заберёт всё по тому же адресу в выбранное время. Можно вернуть самостоятельно в нашем пункте приёма.</p></div>
+      </details>
+      <details class="accordion__item" name="faq">
+        <summary class="accordion__question">Какие способы оплаты доступны?</summary>
+        <div class="accordion__answer"><p>Банковская карта онлайн, СБП, оплата курьеру картой или наличными. Предоплату можно внести на сайте при бронировании.</p></div>
+      </details>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <div class="site-footer__col site-footer__col--brand">
+        <p class="site-footer__logo"><svg class="site-header__logo-icon" viewBox="0 0 32 32" width="32" height="32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="currentColor"/><path d="M9 13h14a3 3 0 0 1 3 3.3l-.5 4.2a2.6 2.6 0 0 1-4.6 1.4L19.6 20h-7.2l-1.3 1.9a2.6 2.6 0 0 1-4.6-1.4L6 16.3A3 3 0 0 1 9 13z" fill="#fff"/><circle cx="11.5" cy="16.5" r="1.3" fill="currentColor"/><circle cx="20.5" cy="16.5" r="1.3" fill="currentColor"/></svg><span>PlayRent</span></p>
+        <p>Прокат игровых консолей и настольных игр с доставкой за час и без залога.</p>
+      </div>
+      <div class="site-footer__col">
+        <p class="site-footer__title">Разделы</p>
+        <ul class="site-footer__list">
+          <li><a class="site-footer__link" href="catalog.html">Каталог</a></li>
+          <li><a class="site-footer__link" href="booking.html">Бронирование</a></li>
+          <li><a class="site-footer__link" href="contacts.html#zone">Зона доставки</a></li>
+          <li><a class="site-footer__link" href="contacts.html#faq">Вопросы и ответы</a></li>
+        </ul>
+      </div>
+      <div class="site-footer__col">
+        <p class="site-footer__title">Контакты</p>
+        <ul class="site-footer__list">
+          <li><a class="site-footer__link" href="tel:+74950000000">+7 (495) 000-00-00</a></li>
+          <li><a class="site-footer__link" href="mailto:hello@playrent.example">hello@playrent.example</a></li>
+          <li>Ежедневно, 10:00–22:00</li>
+        </ul>
+        <ul class="socials" aria-label="Мы в мессенджерах">
+          <li class="socials__item">
+            <a class="socials__link socials__link--telegram" href="https://t.me/playrent_example" target="_blank" rel="noopener noreferrer" aria-label="Telegram" title="Telegram">
+              <svg class="socials__icon" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M21.5 3.6 2.9 10.8c-1.3.5-1.2 1.2-.2 1.5l4.8 1.5 1.8 5.6c.2.6.4.8.8.8.4 0 .6-.2.9-.5l2.3-2.3 4.7 3.5c.9.5 1.5.2 1.7-.8L22.9 5c.3-1.2-.5-1.8-1.4-1.4zM8.6 13.3l9.3-5.9c.4-.3.8-.1.5.2l-7.6 7-.3 3.2-1.9-4.5z"/></svg>
+            </a>
+          </li>
+          <li class="socials__item">
+            <a class="socials__link socials__link--max" href="https://max.ru/playrent_example" target="_blank" rel="noopener noreferrer" aria-label="MAX" title="MAX">
+              <svg class="socials__icon" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M12 2C6.5 2 2 6.2 2 11.4c0 2.5 1 4.7 2.7 6.4-.1 1.3-.6 2.6-1.4 3.6-.2.3 0 .7.4.7 2 0 3.6-.8 4.7-1.7 1.1.4 2.3.6 3.6.6 5.5 0 10-4.2 10-9.4S17.5 2 12 2zm-4.3 12.2V8.9c0-.3.2-.5.5-.5h.9c.2 0 .4.1.5.3l2.4 3.3 2.4-3.3c.1-.2.3-.3.5-.3h.9c.3 0 .5.2.5.5v5.3c0 .3-.2.5-.5.5h-.8c-.3 0-.5-.2-.5-.5v-3l-1.9 2.6c-.2.3-.7.3-.9 0l-1.9-2.6v3c0 .3-.2.5-.5.5h-.8c-.3 0-.5-.2-.5-.5z"/></svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <p class="site-footer__copy">&copy; 2026 PlayRent. Учебный проект. Автор: Ермаков Арсений.</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Забронируйте консоль или настольную игру: выбор даты и времени, адрес доставки, предоплата онлайн и напоминание в мессенджер.">
+  <meta name="color-scheme" content="light dark">
+  <title>Бронирование и оплата — PlayRent</title>
+  <script>try{var t=localStorage.getItem('rent-theme');if(!t){t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}document.documentElement.dataset.theme=t}catch(e){}</script>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Перейти к содержимому</a>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="site-header__logo" href="index.html"><svg class="site-header__logo-icon" viewBox="0 0 32 32" width="32" height="32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="currentColor"/><path d="M9 13h14a3 3 0 0 1 3 3.3l-.5 4.2a2.6 2.6 0 0 1-4.6 1.4L19.6 20h-7.2l-1.3 1.9a2.6 2.6 0 0 1-4.6-1.4L6 16.3A3 3 0 0 1 9 13z" fill="#fff"/><circle cx="11.5" cy="16.5" r="1.3" fill="currentColor"/><circle cx="20.5" cy="16.5" r="1.3" fill="currentColor"/></svg><span>PlayRent</span></a>
+      <nav class="site-nav" id="site-nav" aria-label="Основная навигация">
+        <ul class="site-nav__list">
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html">Главная</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="catalog.html">Каталог</a></li>
+          <li class="site-nav__item"><a class="site-nav__link site-nav__link--active" href="booking.html" aria-current="page">Бронирование</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="contacts.html">О нас и контакты</a></li>
+        </ul>
+      </nav>
+      <div class="site-header__tools">
+        <button class="theme-toggle" type="button" aria-label="Переключить тему" title="Тёмная / светлая тема">
+          <span class="theme-toggle__icon" aria-hidden="true"></span>
+        </button>
+        <a class="button button--primary button--sm site-header__cta" href="booking.html">Забронировать</a>
+        <button class="site-header__burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="site-nav">
+          <span class="site-header__burger-line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="page" id="main">
+    <nav class="breadcrumbs" aria-label="Хлебные крошки">
+      <a class="breadcrumbs__link" href="index.html">Главная</a>
+      <span class="breadcrumbs__current" aria-current="page">Бронирование</span>
+    </nav>
+    <section class="section">
+      <h1 class="section__title section__title--xl">Бронирование и оплата</h1>
+      <p class="section__lead">Три коротких шага. Данные банковской карты в учебном проекте никуда не отправляются.</p>
+    </section>
+
+    <div class="booking-layout">
+      <div class="booking-layout__main">
+        <ol class="steps" id="steps" aria-label="Шаги бронирования">
+          <li class="steps__item steps__item--active" data-step-marker="1"><span class="steps__num">1</span><span class="steps__label">Что и когда</span></li>
+          <li class="steps__item" data-step-marker="2"><span class="steps__num">2</span><span class="steps__label">Доставка</span></li>
+          <li class="steps__item" data-step-marker="3"><span class="steps__num">3</span><span class="steps__label">Оплата</span></li>
+        </ol>
+
+        <form class="booking-form" id="booking-form" action="#" method="post" novalidate data-validate>
+          <fieldset class="booking-form__step" data-step="1">
+            <legend class="booking-form__legend">Что и когда</legend>
+        <div class="field">
+          <label class="field__label" for="bk-item">Позиция</label>
+          <select class="field__control" id="bk-item" name="item" required><option value="">Выберите позицию</option><option value="1" data-day="1800" data-week="9000" data-image="images/product-1-1.svg">PlayStation 5 — 1 800 ₽/сутки</option><option value="2" data-day="1200" data-week="6000" data-image="images/product-2-1.svg">PlayStation 4 Pro — 1 200 ₽/сутки</option><option value="3" data-day="1700" data-week="8500" data-image="images/product-3-1.svg">Xbox Series X — 1 700 ₽/сутки</option><option value="4" data-day="1100" data-week="5500" data-image="images/product-4-1.svg">Xbox Series S — 1 100 ₽/сутки</option><option value="5" data-day="1300" data-week="6500" data-image="images/product-5-1.svg">Nintendo Switch OLED — 1 300 ₽/сутки</option><option value="6" data-day="800" data-week="4000" data-image="images/product-6-1.svg">Nintendo Switch Lite — 800 ₽/сутки</option><option value="7" data-day="350" data-week="1700" data-image="images/product-7-1.svg">Каркассон — 350 ₽/сутки</option><option value="8" data-day="400" data-week="2000" data-image="images/product-8-1.svg">Диксит — 400 ₽/сутки</option><option value="9" data-day="250" data-week="1200" data-image="images/product-9-1.svg">Взрывные котята — 250 ₽/сутки</option><option value="10" data-day="450" data-week="2200" data-image="images/product-10-1.svg">Колонизаторы — 450 ₽/сутки</option><option value="11" data-day="300" data-week="1500" data-image="images/product-11-1.svg">Мафия: большая компания — 300 ₽/сутки</option><option value="12" data-day="300" data-week="1500" data-image="images/product-12-1.svg">Кодовые имена — 300 ₽/сутки</option></select>
+          <p class="field__error" id="bk-item-error" role="alert" hidden></p>
+        </div>
+            <div class="booking-form__row">
+        <div class="field">
+          <label class="field__label" for="bk-from">Дата начала</label>
+          <input class="field__control" id="bk-from" name="from" type="date" required data-min-today>
+          <p class="field__error" id="bk-from-error" role="alert" hidden></p>
+        </div>
+        <div class="field">
+          <label class="field__label" for="bk-to">Дата окончания</label>
+          <input class="field__control" id="bk-to" name="to" type="date" required data-min-today>
+          <p class="field__error" id="bk-to-error" role="alert" hidden></p>
+        </div>
+            </div>
+        <div class="field">
+          <label class="field__label" for="bk-time">Время доставки</label>
+          <select class="field__control" id="bk-time" name="time" required><option value="">Выберите время</option><option value="Как можно быстрее (в течение часа)">Как можно быстрее (в течение часа)</option><option value="10:00–12:00">10:00–12:00</option><option value="12:00–14:00">12:00–14:00</option><option value="14:00–16:00">14:00–16:00</option><option value="16:00–18:00">16:00–18:00</option><option value="18:00–20:00">18:00–20:00</option><option value="20:00–22:00">20:00–22:00</option></select>
+          <p class="field__error" id="bk-time-error" role="alert" hidden></p>
+        </div>
+          </fieldset>
+
+          <fieldset class="booking-form__step" data-step="2" hidden>
+            <legend class="booking-form__legend">Доставка и контакты</legend>
+            <div class="choice" role="radiogroup" aria-label="Способ получения">
+              <label class="choice__item"><input class="choice__input" type="radio" name="delivery" value="courier" checked><span class="choice__body"><span class="choice__title">Доставка курьером</span><span class="choice__text">Привезём и заберём по вашему адресу</span></span></label>
+              <label class="choice__item"><input class="choice__input" type="radio" name="delivery" value="pickup"><span class="choice__body"><span class="choice__title">Самовывоз</span><span class="choice__text">Пункт выдачи: Москва, ул. Игровая, 1</span></span></label>
+            </div>
+            <div id="address-block">
+        <div class="field">
+          <label class="field__label" for="bk-street">Улица</label>
+          <input class="field__control" id="bk-street" name="street" type="text" autocomplete="address-line1" placeholder="Например, Тверская" required>
+          <p class="field__error" id="bk-street-error" role="alert" hidden></p>
+        </div>
+              <div class="booking-form__row booking-form__row--3">
+        <div class="field">
+          <label class="field__label" for="bk-house">Дом</label>
+          <input class="field__control" id="bk-house" name="house" type="text" required>
+          <p class="field__error" id="bk-house-error" role="alert" hidden></p>
+        </div>
+        <div class="field">
+          <label class="field__label" for="bk-flat">Квартира</label>
+          <input class="field__control" id="bk-flat" name="flat" type="text" >
+          <p class="field__error" id="bk-flat-error" role="alert" hidden></p>
+        </div>
+        <div class="field">
+          <label class="field__label" for="bk-floor">Этаж</label>
+          <input class="field__control" id="bk-floor" name="floor" type="number" min="1" max="99">
+          <p class="field__error" id="bk-floor-error" role="alert" hidden></p>
+        </div>
+              </div>
+        <div class="field">
+          <label class="field__label" for="bk-comment">Комментарий курьеру</label>
+          <textarea class="field__control" id="bk-comment" name="comment" rows="2" maxlength="200" placeholder="Домофон, подъезд, как позвонить"></textarea>
+          <p class="field__error" id="bk-comment-error" role="alert" hidden></p>
+        </div>
+            </div>
+            <div class="booking-form__row">
+        <div class="field">
+          <label class="field__label" for="bk-name">Имя</label>
+          <input class="field__control" id="bk-name" name="name" type="text" minlength="2" autocomplete="given-name" required>
+          <p class="field__error" id="bk-name-error" role="alert" hidden></p>
+        </div>
+        <div class="field">
+          <label class="field__label" for="bk-phone">Телефон</label>
+          <input class="field__control" id="bk-phone" name="phone" type="tel" inputmode="tel" placeholder="+7 (900) 000-00-00" pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$" title="Формат: +7 (900) 000-00-00" data-phone-mask autocomplete="tel" required>
+          <p class="field__error" id="bk-phone-error" role="alert" hidden></p>
+        </div>
+            </div>
+        <div class="field">
+          <label class="field__label" for="bk-email">E-mail</label>
+          <input class="field__control" id="bk-email" name="email" type="email" autocomplete="email" placeholder="example@mail.ru" required>
+          <p class="field__error" id="bk-email-error" role="alert" hidden></p>
+        </div>
+          </fieldset>
+
+          <fieldset class="booking-form__step" data-step="3" hidden>
+            <legend class="booking-form__legend">Оплата и напоминание</legend>
+            <div class="choice" role="radiogroup" aria-label="Размер предоплаты">
+              <label class="choice__item"><input class="choice__input" type="radio" name="prepay" value="30" checked><span class="choice__body"><span class="choice__title">Предоплата 30%</span><span class="choice__text">Остальное — при получении</span></span></label>
+              <label class="choice__item"><input class="choice__input" type="radio" name="prepay" value="100"><span class="choice__body"><span class="choice__title">Оплатить полностью</span><span class="choice__text">Ничего не платить курьеру</span></span></label>
+            </div>
+        <div class="field">
+          <label class="field__label" for="bk-card">Номер карты</label>
+          <input class="field__control" id="bk-card" name="card" type="text" inputmode="numeric" autocomplete="off" placeholder="0000 0000 0000 0000" pattern="^\d{4} \d{4} \d{4} \d{4}$" title="16 цифр номера карты" data-card-mask required>
+          <p class="field__error" id="bk-card-error" role="alert" hidden></p>
+        </div>
+            <div class="booking-form__row">
+        <div class="field">
+          <label class="field__label" for="bk-exp">Срок действия</label>
+          <input class="field__control" id="bk-exp" name="exp" type="text" inputmode="numeric" autocomplete="off" placeholder="ММ/ГГ" pattern="^(0[1-9]|1[0-2])/\d{2}$" title="Формат ММ/ГГ" data-exp-mask required>
+          <p class="field__error" id="bk-exp-error" role="alert" hidden></p>
+        </div>
+        <div class="field">
+          <label class="field__label" for="bk-cvc">CVC</label>
+          <input class="field__control" id="bk-cvc" name="cvc" type="password" inputmode="numeric" autocomplete="off" maxlength="3" pattern="^\d{3}$" title="3 цифры" required>
+          <p class="field__error" id="bk-cvc-error" role="alert" hidden></p>
+        </div>
+            </div>
+            <p class="booking-form__note">Демонстрационная оплата: реальные данные карты вводить не нужно.</p>
+
+            <div class="reminder">
+              <label class="field__check"><input class="field__checkbox" id="bk-remind" name="remind" type="checkbox" checked><span>Напомнить о доставке в мессенджер</span></label>
+              <div class="reminder__body" id="reminder-body">
+                <div class="choice choice--compact" role="radiogroup" aria-label="Мессенджер">
+                  <label class="choice__item"><input class="choice__input" type="radio" name="messenger" value="Telegram" checked><span class="choice__body"><span class="choice__title">Telegram</span></span></label>
+                  <label class="choice__item"><input class="choice__input" type="radio" name="messenger" value="WhatsApp"><span class="choice__body"><span class="choice__title">WhatsApp</span></span></label>
+                  <label class="choice__item"><input class="choice__input" type="radio" name="messenger" value="Viber"><span class="choice__body"><span class="choice__title">Viber</span></span></label>
+                </div>
+        <div class="field">
+          <label class="field__label" for="bk-contact">Ник или номер в мессенджере</label>
+          <input class="field__control" id="bk-contact" name="contact" type="text" placeholder="@nickname или +7…" required>
+          <small class="field__hint" id="bk-contact-hint">Напомним за 2 часа до доставки и за 3 часа до конца аренды</small>
+          <p class="field__error" id="bk-contact-error" role="alert" hidden></p>
+        </div>
+              </div>
+            </div>
+            <div class="field field--checkbox">
+              <label class="field__check"><input class="field__checkbox" id="bk-agree" name="agreement" type="checkbox" required><span>Я согласен с условиями аренды и обработкой персональных данных</span></label>
+              <p class="field__error" id="bk-agree-error" role="alert" hidden></p>
+            </div>
+          </fieldset>
+
+          <div class="booking-form__actions">
+            <button class="button button--secondary" type="button" id="step-back" hidden>Назад</button>
+            <button class="button button--primary" type="button" id="step-next">Далее</button>
+            <button class="button button--primary" type="submit" id="step-submit" hidden>Оплатить и забронировать</button>
+          </div>
+        </form>
+
+        <section class="booking-done" id="booking-done" tabindex="-1" hidden aria-labelledby="done-title">
+          <p class="booking-done__icon" aria-hidden="true">✓</p>
+          <h2 class="booking-done__title" id="done-title">Бронь подтверждена</h2>
+          <p class="booking-done__number">Номер брони: <strong id="done-number"></strong></p>
+          <ul class="booking-done__list" id="done-list"></ul>
+          <p class="booking-done__text" id="done-remind"></p>
+          <div class="booking-done__actions">
+            <a class="button button--primary" href="catalog.html">Вернуться в каталог</a>
+            <a class="button button--secondary" href="index.html">На главную</a>
+          </div>
+        </section>
+      </div>
+
+      <aside class="booking-layout__aside" aria-label="Сводка брони">
+        <div class="summary" id="summary">
+          <img class="summary__image" id="summary-image" src="images/product-1-1.svg" alt="" width="400" height="300" hidden>
+          <h2 class="summary__title">Ваша бронь</h2>
+          <dl class="summary__list">
+            <div class="summary__row"><dt>Позиция</dt><dd id="sum-item">не выбрана</dd></div>
+            <div class="summary__row"><dt>Период</dt><dd id="sum-period">—</dd></div>
+            <div class="summary__row"><dt>Срок</dt><dd id="sum-days">—</dd></div>
+            <div class="summary__row"><dt>Доставка</dt><dd id="sum-delivery">бесплатно</dd></div>
+            <div class="summary__row summary__row--total"><dt>Итого</dt><dd id="sum-total">—</dd></div>
+            <div class="summary__row"><dt>К оплате сейчас</dt><dd id="sum-prepay">—</dd></div>
+          </dl>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <div class="site-footer__col site-footer__col--brand">
+        <p class="site-footer__logo"><svg class="site-header__logo-icon" viewBox="0 0 32 32" width="32" height="32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="currentColor"/><path d="M9 13h14a3 3 0 0 1 3 3.3l-.5 4.2a2.6 2.6 0 0 1-4.6 1.4L19.6 20h-7.2l-1.3 1.9a2.6 2.6 0 0 1-4.6-1.4L6 16.3A3 3 0 0 1 9 13z" fill="#fff"/><circle cx="11.5" cy="16.5" r="1.3" fill="currentColor"/><circle cx="20.5" cy="16.5" r="1.3" fill="currentColor"/></svg><span>PlayRent</span></p>
+        <p>Прокат игровых консолей и настольных игр с доставкой за час и без залога.</p>
+      </div>
+      <div class="site-footer__col">
+        <p class="site-footer__title">Разделы</p>
+        <ul class="site-footer__list">
+          <li><a class="site-footer__link" href="catalog.html">Каталог</a></li>
+          <li><a class="site-footer__link" href="booking.html">Бронирование</a></li>
+          <li><a class="site-footer__link" href="contacts.html#zone">Зона доставки</a></li>
+          <li><a class="site-footer__link" href="contacts.html#faq">Вопросы и ответы</a></li>
+        </ul>
+      </div>
+      <div class="site-footer__col">
+        <p class="site-footer__title">Контакты</p>
+        <ul class="site-footer__list">
+          <li><a class="site-footer__link" href="tel:+74950000000">+7 (495) 000-00-00</a></li>
+          <li><a class="site-footer__link" href="mailto:hello@playrent.example">hello@playrent.example</a></li>
+          <li>Ежедневно, 10:00–22:00</li>
+        </ul>
+        <ul class="socials" aria-label="Мы в мессенджерах">
+          <li class="socials__item">
+            <a class="socials__link socials__link--telegram" href="https://t.me/playrent_example" target="_blank" rel="noopener noreferrer" aria-label="Telegram" title="Telegram">
+              <svg class="socials__icon" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M21.5 3.6 2.9 10.8c-1.3.5-1.2 1.2-.2 1.5l4.8 1.5 1.8 5.6c.2.6.4.8.8.8.4 0 .6-.2.9-.5l2.3-2.3 4.7 3.5c.9.5 1.5.2 1.7-.8L22.9 5c.3-1.2-.5-1.8-1.4-1.4zM8.6 13.3l9.3-5.9c.4-.3.8-.1.5.2l-7.6 7-.3 3.2-1.9-4.5z"/></svg>
+            </a>
+          </li>
+          <li class="socials__item">
+            <a class="socials__link socials__link--max" href="https://max.ru/playrent_example" target="_blank" rel="noopener noreferrer" aria-label="MAX" title="MAX">
+              <svg class="socials__icon" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M12 2C6.5 2 2 6.2 2 11.4c0 2.5 1 4.7 2.7 6.4-.1 1.3-.6 2.6-1.4 3.6-.2.3 0 .7.4.7 2 0 3.6-.8 4.7-1.7 1.1.4 2.3.6 3.6.6 5.5 0 10-4.2 10-9.4S17.5 2 12 2zm-4.3 12.2V8.9c0-.3.2-.5.5-.5h.9c.2 0 .4.1.5.3l2.4 3.3 2.4-3.3c.1-.2.3-.3.5-.3h.9c.3 0 .5.2.5.5v5.3c0 .3-.2.5-.5.5h-.8c-.3 0-.5-.2-.5-.5v-3l-1.9 2.6c-.2.3-.7.3-.9 0l-1.9-2.6v3c0 .3-.2.5-.5.5h-.8c-.3 0-.5-.2-.5-.5z"/></svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <p class="site-footer__copy">&copy; 2026 PlayRent. Учебный проект. Автор: Ермаков Арсений.</p>
+  </footer>
+</body>
+</html>

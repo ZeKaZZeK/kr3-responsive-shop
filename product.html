@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Карточка позиции: фото, список игр, комплектация, цены, календарь свободных дат и условия аренды.">
+  <meta name="color-scheme" content="light dark">
+  <title>PlayStation 5 — PlayRent</title>
+  <script>try{var t=localStorage.getItem('rent-theme');if(!t){t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}document.documentElement.dataset.theme=t}catch(e){}</script>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/products.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Перейти к содержимому</a>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="site-header__logo" href="index.html"><svg class="site-header__logo-icon" viewBox="0 0 32 32" width="32" height="32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="currentColor"/><path d="M9 13h14a3 3 0 0 1 3 3.3l-.5 4.2a2.6 2.6 0 0 1-4.6 1.4L19.6 20h-7.2l-1.3 1.9a2.6 2.6 0 0 1-4.6-1.4L6 16.3A3 3 0 0 1 9 13z" fill="#fff"/><circle cx="11.5" cy="16.5" r="1.3" fill="currentColor"/><circle cx="20.5" cy="16.5" r="1.3" fill="currentColor"/></svg><span>PlayRent</span></a>
+      <nav class="site-nav" id="site-nav" aria-label="Основная навигация">
+        <ul class="site-nav__list">
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html">Главная</a></li>
+          <li class="site-nav__item"><a class="site-nav__link site-nav__link--active" href="catalog.html" aria-current="page">Каталог</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="booking.html">Бронирование</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="contacts.html">О нас и контакты</a></li>
+        </ul>
+      </nav>
+      <div class="site-header__tools">
+        <button class="theme-toggle" type="button" aria-label="Переключить тему" title="Тёмная / светлая тема">
+          <span class="theme-toggle__icon" aria-hidden="true"></span>
+        </button>
+        <a class="button button--primary button--sm site-header__cta" href="booking.html">Забронировать</a>
+        <button class="site-header__burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="site-nav">
+          <span class="site-header__burger-line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="page" id="main">
+    <nav class="breadcrumbs" aria-label="Хлебные крошки">
+      <a class="breadcrumbs__link" href="index.html">Главная</a>
+      <a class="breadcrumbs__link" href="catalog.html">Каталог</a>
+      <span class="breadcrumbs__current" aria-current="page" data-bind="breadcrumb">PlayStation 5</span>
+    </nav>
+
+    <article class="product" id="product" data-product-id="1">
+      <div class="product__layout">
+        <section class="gallery" aria-label="Фотографии">
+          <figure class="gallery__figure"><img class="gallery__main" id="gallery-main" src="images/product-1-1.svg" alt="PlayStation 5" width="800" height="600"></figure>
+          <ul class="gallery__thumbs" aria-label="Выбор фотографии">
+          <li class="gallery__item"><button class="gallery__thumb gallery__thumb--active" type="button" data-gallery-thumb aria-label="Фото 1" aria-pressed="true"><img class="gallery__thumb-image" src="images/product-1-1.svg" alt="" width="120" height="90"></button></li>
+          <li class="gallery__item"><button class="gallery__thumb" type="button" data-gallery-thumb aria-label="Фото 2" aria-pressed="false"><img class="gallery__thumb-image" src="images/product-1-2.svg" alt="" width="120" height="90"></button></li>
+          <li class="gallery__item"><button class="gallery__thumb" type="button" data-gallery-thumb aria-label="Фото 3" aria-pressed="false"><img class="gallery__thumb-image" src="images/product-1-3.svg" alt="" width="120" height="90"></button></li>
+          </ul>
+        </section>
+
+        <div class="product-info">
+          <p class="product-info__meta"><span data-bind="chip"><span class="chip chip--ps">PlayStation</span></span> <span class="product-info__players" data-bind="players">Игроков: 1–4</span></p>
+          <h1 class="product-info__title" data-bind="name">PlayStation 5</h1>
+          <p class="product-info__lead" data-bind="short">Флагманская консоль с SSD и поддержкой 4K. Два геймпада в комплекте.</p>
+          <div class="tariffs">
+            <div class="tariffs__item"><p class="tariffs__label">Сутки</p><p class="tariffs__price" data-bind="day">1 800 ₽</p></div>
+            <div class="tariffs__item tariffs__item--accent"><p class="tariffs__label">Неделя</p><p class="tariffs__price" data-bind="week">9 000 ₽</p><p class="tariffs__note" data-bind="save">выгода 30%</p></div>
+          </div>
+          <div class="product-info__actions">
+            <a class="button button--primary button--lg" id="product-book" href="booking.html?id=1">Забронировать</a>
+            <a class="button button--secondary button--lg" href="catalog.html">В каталог</a>
+          </div>
+          <ul class="product-info__perks">
+            <li>Доставка за час, без залога</li>
+            <li>Предоплата 30%, остальное — при получении</li>
+            <li>Бесплатная замена при поломке</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="product__sections">
+        <section class="section" aria-labelledby="desc-title">
+          <h2 class="section__title" id="desc-title">Описание</h2>
+          <p class="prose" data-bind="long">PlayStation 5 запускает игры почти мгновенно, а фирменные геймпады отзываются вибрацией на каждое действие. Консоль приезжает чистой, обновлённой и настроенной — достаточно подключить к телевизору.</p>
+        </section>
+
+        <section class="section" aria-labelledby="games-title">
+          <h2 class="section__title" id="games-title" data-bind="games-title">Доступные игры</h2>
+          <ul class="tag-list" data-bind="games">
+          <li class="tag-list__item">EA Sports FC 26</li>
+          <li class="tag-list__item">Spider-Man 2</li>
+          <li class="tag-list__item">God of War Ragnarök</li>
+          <li class="tag-list__item">Gran Turismo 7</li>
+          <li class="tag-list__item">It Takes Two</li>
+          <li class="tag-list__item">Mortal Kombat 1</li>
+          </ul>
+        </section>
+
+        <section class="section" aria-labelledby="kit-title">
+          <h2 class="section__title" id="kit-title">Комплектация</h2>
+          <ul class="check-list" data-bind="kit">
+          <li class="check-list__item">Консоль PlayStation 5</li>
+          <li class="check-list__item">2 геймпада DualSense</li>
+          <li class="check-list__item">HDMI-кабель и кабель питания</li>
+          <li class="check-list__item">Зарядная станция для геймпадов</li>
+          </ul>
+        </section>
+
+        <section class="section" id="calendar" aria-labelledby="cal-title">
+          <h2 class="section__title" id="cal-title">Свободные даты</h2>
+          <p class="section__lead">Выберите дату начала и дату окончания аренды — мы посчитаем стоимость.</p>
+          <div class="calendar" id="calendar-widget" data-calendar></div>
+          <div class="calendar-summary" id="calendar-summary" aria-live="polite">
+            <p class="calendar-summary__text" id="calendar-text">Выберите даты в календаре.</p>
+            <a class="button button--primary" id="calendar-book" href="booking.html?id=1">Забронировать на эти даты</a>
+          </div>
+        </section>
+
+        <section class="section" aria-labelledby="terms-title">
+          <h2 class="section__title" id="terms-title">Условия аренды и залог</h2>
+          <div class="accordion">
+      <details class="accordion__item" name="terms">
+        <summary class="accordion__question">Условия аренды</summary>
+        <div class="accordion__answer"><p>Минимальный срок аренды — одни сутки. Сутки отсчитываются с момента доставки. Неделя считается за 7 суток, дальше цена пересчитывается по тарифу.</p></div>
+      </details>
+      <details class="accordion__item" name="terms">
+        <summary class="accordion__question">Залог и предоплата</summary>
+        <div class="accordion__answer"><p>Залог не нужен. Вы вносите предоплату 30% при бронировании, остальное — при получении. Предоплата возвращается при отмене за 3 часа до доставки.</p></div>
+      </details>
+      <details class="accordion__item" name="terms">
+        <summary class="accordion__question">Что с поломками?</summary>
+        <div class="accordion__answer"><p>Естественный износ и заводской брак не оплачиваются. Если оборудование повреждено по вине клиента, возмещается стоимость ремонта по прайсу.</p></div>
+      </details>
+      <details class="accordion__item" name="terms">
+        <summary class="accordion__question">Продление и возврат</summary>
+        <div class="accordion__answer"><p>Продлить аренду можно по телефону или в мессенджере. Возврат — курьеру по тому же адресу или в нашем пункте приёма ежедневно с 10:00 до 21:00.</p></div>
+      </details>
+          </div>
+        </section>
+      </div>
+    </article>
+
+    <section class="section" aria-labelledby="similar-title">
+      <h2 class="section__title" id="similar-title">Похожие позиции</h2>
+      <div class="products-grid" id="similar-grid">
+    <article class="product-card" data-id="2" data-platform="ps" data-pmin="1" data-pmax="4" data-price="1200" data-name="PlayStation 4 Pro">
+      <a class="product-card__media" href="product.html?id=2" tabindex="-1" aria-hidden="true">
+        <img class="product-card__image" src="images/product-2-1.svg" alt="" width="400" height="300" loading="lazy">
+      </a>
+      <div class="product-card__meta"><span class="chip chip--ps">PlayStation</span><span class="product-card__players">Игроков: 1–4</span></div>
+      <h3 class="product-card__title"><a class="product-card__link" href="product.html?id=2">PlayStation 4 Pro</a></h3>
+      <p class="product-card__description">Проверенная классика с огромной библиотекой игр для компании.</p>
+      <p class="product-card__price"><span class="product-card__price-current">1 200 ₽</span><span class="product-card__price-unit">/ сутки</span></p>
+      <div class="product-card__actions">
+        <a class="button button--secondary" href="product.html?id=2">Подробнее</a>
+        <a class="button button--primary" href="booking.html?id=2">Забронировать</a>
+      </div>
+    </article>
+    <article class="product-card" data-id="3" data-platform="xbox" data-pmin="1" data-pmax="4" data-price="1700" data-name="Xbox Series X">
+      <span class="product-card__badge product-card__badge--hit">Хит</span>
+      <a class="product-card__media" href="product.html?id=3" tabindex="-1" aria-hidden="true">
+        <img class="product-card__image" src="images/product-3-1.svg" alt="" width="400" height="300" loading="lazy">
+      </a>
+      <div class="product-card__meta"><span class="chip chip--xbox">Xbox</span><span class="product-card__players">Игроков: 1–4</span></div>
+      <h3 class="product-card__title"><a class="product-card__link" href="product.html?id=3">Xbox Series X</a></h3>
+      <p class="product-card__description">Мощная консоль с тихим охлаждением и подпиской Game Pass на время аренды.</p>
+      <p class="product-card__price"><span class="product-card__price-current">1 700 ₽</span><span class="product-card__price-unit">/ сутки</span></p>
+      <div class="product-card__actions">
+        <a class="button button--secondary" href="product.html?id=3">Подробнее</a>
+        <a class="button button--primary" href="booking.html?id=3">Забронировать</a>
+      </div>
+    </article>
+    <article class="product-card" data-id="5" data-platform="nintendo" data-pmin="1" data-pmax="4" data-price="1300" data-name="Nintendo Switch OLED">
+      <span class="product-card__badge product-card__badge--new">Новинка</span>
+      <a class="product-card__media" href="product.html?id=5" tabindex="-1" aria-hidden="true">
+        <img class="product-card__image" src="images/product-5-1.svg" alt="" width="400" height="300" loading="lazy">
+      </a>
+      <div class="product-card__meta"><span class="chip chip--nintendo">Nintendo</span><span class="product-card__players">Игроков: 1–4</span></div>
+      <h3 class="product-card__title"><a class="product-card__link" href="product.html?id=5">Nintendo Switch OLED</a></h3>
+      <p class="product-card__description">Гибридная консоль с яркой OLED-вставкой: играйте дома и в дороге.</p>
+      <p class="product-card__price"><span class="product-card__price-current">1 300 ₽</span><span class="product-card__price-unit">/ сутки</span></p>
+      <div class="product-card__actions">
+        <a class="button button--secondary" href="product.html?id=5">Подробнее</a>
+        <a class="button button--primary" href="booking.html?id=5">Забронировать</a>
+      </div>
+    </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <div class="site-footer__col site-footer__col--brand">
+        <p class="site-footer__logo"><svg class="site-header__logo-icon" viewBox="0 0 32 32" width="32" height="32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="currentColor"/><path d="M9 13h14a3 3 0 0 1 3 3.3l-.5 4.2a2.6 2.6 0 0 1-4.6 1.4L19.6 20h-7.2l-1.3 1.9a2.6 2.6 0 0 1-4.6-1.4L6 16.3A3 3 0 0 1 9 13z" fill="#fff"/><circle cx="11.5" cy="16.5" r="1.3" fill="currentColor"/><circle cx="20.5" cy="16.5" r="1.3" fill="currentColor"/></svg><span>PlayRent</span></p>
+        <p>Прокат игровых консолей и настольных игр с доставкой за час и без залога.</p>
+      </div>
+      <div class="site-footer__col">
+        <p class="site-footer__title">Разделы</p>
+        <ul class="site-footer__list">
+          <li><a class="site-footer__link" href="catalog.html">Каталог</a></li>
+          <li><a class="site-footer__link" href="booking.html">Бронирование</a></li>
+          <li><a class="site-footer__link" href="contacts.html#zone">Зона доставки</a></li>
+          <li><a class="site-footer__link" href="contacts.html#faq">Вопросы и ответы</a></li>
+        </ul>
+      </div>
+      <div class="site-footer__col">
+        <p class="site-footer__title">Контакты</p>
+        <ul class="site-footer__list">
+          <li><a class="site-footer__link" href="tel:+74950000000">+7 (495) 000-00-00</a></li>
+          <li><a class="site-footer__link" href="mailto:hello@playrent.example">hello@playrent.example</a></li>
+          <li>Ежедневно, 10:00–22:00</li>
+        </ul>
+        <ul class="socials" aria-label="Мы в мессенджерах">
+          <li class="socials__item">
+            <a class="socials__link socials__link--telegram" href="https://t.me/playrent_example" target="_blank" rel="noopener noreferrer" aria-label="Telegram" title="Telegram">
+              <svg class="socials__icon" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M21.5 3.6 2.9 10.8c-1.3.5-1.2 1.2-.2 1.5l4.8 1.5 1.8 5.6c.2.6.4.8.8.8.4 0 .6-.2.9-.5l2.3-2.3 4.7 3.5c.9.5 1.5.2 1.7-.8L22.9 5c.3-1.2-.5-1.8-1.4-1.4zM8.6 13.3l9.3-5.9c.4-.3.8-.1.5.2l-7.6 7-.3 3.2-1.9-4.5z"/></svg>
+            </a>
+          </li>
+          <li class="socials__item">
+            <a class="socials__link socials__link--max" href="https://max.ru/playrent_example" target="_blank" rel="noopener noreferrer" aria-label="MAX" title="MAX">
+              <svg class="socials__icon" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M12 2C6.5 2 2 6.2 2 11.4c0 2.5 1 4.7 2.7 6.4-.1 1.3-.6 2.6-1.4 3.6-.2.3 0 .7.4.7 2 0 3.6-.8 4.7-1.7 1.1.4 2.3.6 3.6.6 5.5 0 10-4.2 10-9.4S17.5 2 12 2zm-4.3 12.2V8.9c0-.3.2-.5.5-.5h.9c.2 0 .4.1.5.3l2.4 3.3 2.4-3.3c.1-.2.3-.3.5-.3h.9c.3 0 .5.2.5.5v5.3c0 .3-.2.5-.5.5h-.8c-.3 0-.5-.2-.5-.5v-3l-1.9 2.6c-.2.3-.7.3-.9 0l-1.9-2.6v3c0 .3-.2.5-.5.5h-.8c-.3 0-.5-.2-.5-.5z"/></svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <p class="site-footer__copy">&copy; 2026 PlayRent. Учебный проект. Автор: Ермаков Арсений.</p>
+  </footer>
+</body>
+</html>
